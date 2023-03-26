@@ -89,6 +89,9 @@ function mainMenu(person, people) {
         case "quit":
             // Stop application execution
             return;
+        case "test":
+            let result = findParents(person[0],people)    
+            break;
         default:
             // Prompt user again. Another instance of recursion
             return mainMenu(person, people);
@@ -139,19 +142,19 @@ function displayPeople(people) {
  * @param {Object} person       A singular object.
  */
 //! TODO #1a: finish getting the rest of the information to display //////////////////////////////////////////
-function displayPerson(person) {
-    let personInfo = `First Name: ${person.firstName}\n`;
-        personInfo += `Last Name: ${person.lastName}\n`;
-        personInfo += `gender: ${person.gender}\n`;
-        personInfo += `dob: ${person.dob}\n`;
-        personInfo += `height: ${person.height}\n`;
-        personInfo += `weight: ${person.weight}\n`;
-        personInfo += `eyeColor: ${person.eyeColor}\n`;
-        personInfo += `occupation: ${person.occupation}\n`;
-        personInfo += `parents: ${person.Array}\n`;
-        personInfo += `currentSpouse: ${person.currentSpouse}\n`;
-    alert(personInfo);
-}    
+// function displayPerson(person) {
+//     let personInfo = `First Name: ${person.firstName}\n`;
+//         personInfo += `Last Name: ${person.lastName}\n`;
+//         personInfo += `gender: ${person.gender}\n`;
+//         personInfo += `dob: ${person.dob}\n`;
+//         personInfo += `height: ${person.height}\n`;
+//         personInfo += `weight: ${person.weight}\n`;
+//         personInfo += `eyeColor: ${person.eyeColor}\n`;
+//         personInfo += `occupation: ${person.occupation}\n`;
+//         personInfo += `parents: ${person.parents}\n`;
+//         personInfo += `currentSpouse: ${person.currentSpouse}\n`;
+//     alert(personInfo);
+// }    
 
 // End of displayPerson()
 
@@ -195,12 +198,32 @@ function chars(input) {
 //////////////////////////////////////////* End Of Starter Code *//////////////////////////////////////////
 // Any additional functions can be written below this line 👇. Happy Coding! 😁
 
-function findPersonParents(person) {
-let personInfo = `parents: ${person.parents}\n`;         
-alert();
+function findParents(people,person) {
+    let parents = people.filter(el(function)) {
+        if(person.parents.includes(el.id))
+        {
+        return true;
+        }
+    });
+    
+    console.log(parents);
 }
+function findSiblings(people,person){
+    let siblings =
+    if(person.siblings.includes(el.siblings))
+    return true;
+}
+
+// function find currentSpouse()
 
 
 
 // 
+function findPersonDescendants(people,person){
+    let descendants = people.map(el(function)){
+        if(person.dob <= id)
+        }
+        return true;
+    });    
 
+}
