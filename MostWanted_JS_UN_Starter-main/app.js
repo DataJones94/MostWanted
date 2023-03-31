@@ -227,14 +227,15 @@ function findCurrentSpouse(people, person){
 }
 // Master Method like in RPSLS- supposed to run all funcions...
 function findPersonFamily(){
-    let findPersonFamily = findParents() || findSiblings() || findCurrentSpouse()
-    console.log(findPersonFamily)
+    let parents = findParents() 
+    let siblings = findSiblings() 
+    let spouse = findCurrentSpouse()
+    console.log(parents)
+    console.log(siblings)
+    console.log(spouse)
 }
 
-// //
-// function findPersonDescendants(people,person){
-//     let descendants = people.map(el(function)){
-//         if(person.dob <= id)
-//         }
-//         return true;
-//     });
+
+// function findPersonDescendants
+// let personDescendants = findPersonDescendants(person[0], people);
+// alert(personDescendants);
