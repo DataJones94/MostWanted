@@ -90,7 +90,7 @@ function mainMenu(person, people) {
       // Stop application execution
       return;
     case "test":
-      let result = findParents(person[0], people);
+      let result = findParents(person, people);
       break;
     default:
       // Prompt user again. Another instance of recursion
@@ -227,11 +227,17 @@ function findCurrentSpouse(people, person){
 }
 // Master Method like in RPSLS- supposed to run all funcions...
 function findPersonFamily(){
+    
     let parents = findParents() 
-    let siblings = findSiblings() 
+        if (findPersonFamily === parents)
+        console.log(parents)
+
+    let siblings = findSiblings()
+        if(findPersonFamily === siblings) 
+        console.log(siblings)
+
     let spouse = findCurrentSpouse()
-    console.log(parents)
-    console.log(siblings)
+        if(findPersonFamily === spouse)
     console.log(spouse)
 }
 
