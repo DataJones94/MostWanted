@@ -225,11 +225,10 @@ function findCurrentSpouse(people, person){
     return spouse
 
 }
-// Master Method 
-function findPersonFamily(people, person){
-    findParents()
-    findSiblings()
-    findCurrentSpouse()
+// Master Method like in RPSLS- supposed to run all funcions...
+function findPersonFamily(){
+    let findPersonFamily = findParents() || findSiblings() || findCurrentSpouse()
+    console.log(findPersonFamily)
 }
 
 // //
