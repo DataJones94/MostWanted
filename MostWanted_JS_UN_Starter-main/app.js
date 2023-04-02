@@ -199,14 +199,15 @@ function chars(input) {
 // Any additional functions can be written below this line 👇. Happy Coding! 😁
 
 function findParents(people, person) {
-//   let parents = people.filter(function (el) {
-//     if (person.parents.includes(el.id)) {
-//       return true;
-//     }
-//   });
-let parents2 = people.filter(item => person.parents.includes(el.id) )
-  console.log(parents2); 
-  return parents2
+  let parents = people.filter (el => {
+    if (person.parents.includes(el.id)) {
+      return true;
+    }
+  });
+// let parents2 = people.filter(item => person.parents.includes(el.id) )
+//   console.log(parents2); 
+//   return parents2
+console.log(parents)
 }
 
 
@@ -214,13 +215,13 @@ let parents2 = people.filter(item => person.parents.includes(el.id) )
 
 
 function findSiblings(people,person){
-    let siblings = people.filter(item=> person.parents.includes(item.parents[0]) || person.parents.includes(item.parents[1]) )
+    let siblings = people.filter(item => person.parents.includes(item.parents[0]) || person.parents.includes(item.parents[1]) )
     console.log(siblings);
     return siblings
 }
 
 function findCurrentSpouse(people, person){
-    let spouse = people.filter(item=> person.id.filter(item.currentSpouse === item.id) )
+    let spouse = people.filter(item => person.id.filter(item.currentSpouse === item.id) )
     console.log(spouse);
     return spouse
 
@@ -242,6 +243,18 @@ function findPersonFamily(){
 }
 
 
-// function findPersonDescendants
-// let personDescendants = findPersonDescendants(person[0], people);
-// alert(personDescendants);
+function findPersonDescendants(person,people){
+    let descendants = people.filter(el => {
+        if (el.parents.includes(person.id)){
+            return true
+        }
+    })
+    if (descendants[0]){
+        descendants.forEach(el =>{
+            descendants = descendants.concat(findPersonDescendants(el.people))
+        });
+
+    }
+    console.log(descendants)
+    return descendants
+}
