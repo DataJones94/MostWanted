@@ -199,15 +199,15 @@ function chars(input) {
 // Any additional functions can be written below this line 👇. Happy Coding! 😁
 
 function findParents(people, person) {
-//   let parents = people.filter (el => {
-//     if (person.parents.includes(el.id)) {
-//       return true;
-//     }
-//   });
-let parents2 = people.filter(item => person.parents.includes(el.id) )
-  console.log(parents2); 
-  return parents2
-// console.log(parents)
+  let parents = people.filter (el => {
+    if (person.parents.includes(el.id)) {
+      return true;
+    }
+  });
+// let parents2 = people.filter(item => person.parents.includes(item.id) )
+//   console.log(parents2); 
+//   return parents2
+console.log(parents)
 }
 
 
@@ -227,23 +227,23 @@ function findCurrentSpouse(people, person){
 
 }
 // Master Method like in RPSLS- supposed to run all funcions...
-function findPersonFamily(){
+function findPersonFamily(people, person){
     
-    let parents = findParents() 
+    let parents = findParents(people, person) 
         if (findPersonFamily === parents)
         console.log(parents)
 
-    let siblings = findSiblings()
+    let siblings = findSiblings(people, person)
         if(findPersonFamily === siblings) 
         console.log(siblings)
 
-    let spouse = findCurrentSpouse()
+    let spouse = findCurrentSpouse(people, person)
         if(findPersonFamily === spouse)
     console.log(spouse)
 }
 
 
-function findPersonDescendants(person,people){
+function findPersonDescendants(people, person){
     let descendants = people.filter(el => {
         if (el.parents.includes(person.id)){
             return true
@@ -251,10 +251,18 @@ function findPersonDescendants(person,people){
     })
     if (descendants[0]){
         descendants.forEach(el =>{
-            descendants = descendants.concat(findPersonDescendants(el.people))
+            descendants = descendants.concat(findPersonDescendants(el,people)) // these are two params that we're looking at 
         });
 
     }
     console.log(descendants)
     return descendants
 }
+
+
+
+
+
+
+
+
