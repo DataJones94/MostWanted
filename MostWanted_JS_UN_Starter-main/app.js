@@ -90,7 +90,7 @@ function mainMenu(person, people) {
       // Stop application execution
       return;
     case "test":
-      let result = findParents(person, people);
+      findPersonDescendants(person[0], people);
       break;
     default:
       // Prompt user again. Another instance of recursion
@@ -199,15 +199,15 @@ function chars(input) {
 // Any additional functions can be written below this line 👇. Happy Coding! 😁
 
 function findParents(people, person) {
-  let parents = people.filter (el => {
-    if (person.parents.includes(el.id)) {
-      return true;
-    }
-  });
-// let parents2 = people.filter(item => person.parents.includes(el.id) )
-//   console.log(parents2); 
-//   return parents2
-console.log(parents)
+//   let parents = people.filter (el => {
+//     if (person.parents.includes(el.id)) {
+//       return true;
+//     }
+//   });
+let parents2 = people.filter(item => person.parents.includes(el.id) )
+  console.log(parents2); 
+  return parents2
+// console.log(parents)
 }
 
 
