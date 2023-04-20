@@ -259,6 +259,19 @@ function findPersonDescendants(people, person){
     return descendants
 }
 
+function personPropertyChecker(string, personObj){
+  return Object.keys(personObj).includes(string)
+}
+
+function searchByTraits(people){
+  let userInputProp = prompt('Enter a property to search for');
+  let userInputVal = prompt(`Enter a value for ${userInputProp}`);
+  let resultsArray= people.filter((el) => el[userInputProp] == userInputVal)
+  if (resultsArray.length === 1) return resultsArray;
+  if (resultsArray.length === 0) return searchByTraits(people);
+  if (resultsArray.length >1) return searchByTraits(resultsArray);
+
+}
 
 
 
